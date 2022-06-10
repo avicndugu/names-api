@@ -1,0 +1,6 @@
+---
+---
+{% assign counter = 0 %}{% assign data = site.data.yob1942 | sort: "count" | reverse %}
+[{% for name in data limit:250 %}
+{% if counter < 249 %}{{ name | jsonify }},{% else %}{{ name | jsonify }}{% endif %}{% assign counter = counter | plus: 1 %}
+{% endfor %}]
